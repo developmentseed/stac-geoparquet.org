@@ -5,17 +5,17 @@ const features = [
   {
     title: "Each row is one STAC Item",
     description:
-      "The basic unit of storage maps directly to STAC's data model, making it intuitive to work with.",
+      "Items that are close in space and time can be sorted next to each other, unlocking efficient partitioning strategies",
   },
   {
-    title: "Properties promoted to top-level columns",
+    title: "Properties are promoted to top-level columns",
     description:
-      "Item properties become Parquet columns, enabling efficient filtering and selection without parsing JSON.",
+      "Item properties become Parquet columns, enabling filtering and selection without parsing JSON.",
   },
   {
-    title: "Geometry stored as WKB",
+    title: "Geometry stored as native geometry types or WKB",
     description:
-      "Geometries are encoded as Well-Known Binary (WKB), compatible with most geospatial tools and libraries.",
+      "Flexible geometry encoding allows access via a wide variety of tools.",
   },
   {
     title: "Native timestamp types",

@@ -6,6 +6,7 @@ import {
   Heading,
   Image,
   Link,
+  Span,
   Stack,
   Text,
 } from "@chakra-ui/react";
@@ -29,11 +30,7 @@ function Header() {
           wrap="wrap"
           gap={4}
         >
-          <Link href="#" _hover={{ textDecoration: "none" }}>
-            <Heading as="h1" size="lg" fontWeight="bold">
-              stac-geoparquet
-            </Heading>
-          </Link>
+          <Span />
           <Flex gap={{ base: 3, md: 6 }} wrap="wrap" justify="center">
             {navLinks.map((link) => (
               <Link
@@ -49,28 +46,24 @@ function Header() {
         </Flex>
       </Container>
 
-      <Box py={{ base: 16, md: 24 }} textAlign="center">
-        <Container maxW="container.md">
-          <Stack gap={6}>
-            <Center>
-              <Image src="/stac-geoparquet.png" w={100} />
-            </Center>
-            <Heading as="h2" size="4xl" fontWeight="bold">
-              stac-geoparquet
-            </Heading>
-            <Text fontSize={{ base: "xl", md: "2xl" }} opacity={0.9}>
-              Store{" "}
-              <Link href="https://stacspec.org/" target="_blank" color={"bg"}>
-                STAC
-              </Link>{" "}
-              items in{" "}
-              <Link href="https://geoparquet.org/" target="_blank" color={"bg"}>
-                GeoParquet
-              </Link>
-            </Text>
-          </Stack>
-        </Container>
-      </Box>
+      <Stack py={{ base: 12, md: 20 }} gap={6} textAlign={"center"}>
+        <Center>
+          <Image src="/stac-geoparquet.png" w={100} />
+        </Center>
+        <Heading as="h2" size="4xl" fontWeight="bold">
+          stac-geoparquet
+        </Heading>
+        <Text fontSize={{ base: "xl", md: "2xl" }} opacity={0.9}>
+          Store{" "}
+          <Link href="https://stacspec.org/" target="_blank" color={"bg"}>
+            STAC
+          </Link>{" "}
+          items in{" "}
+          <Link href="https://geoparquet.org/" target="_blank" color={"bg"}>
+            GeoParquet
+          </Link>
+        </Text>
+      </Stack>
     </Box>
   );
 }

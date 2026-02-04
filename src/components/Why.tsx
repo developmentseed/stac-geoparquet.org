@@ -1,26 +1,33 @@
-import { Box, SimpleGrid, Text, VStack } from "@chakra-ui/react";
+import { Box, SimpleGrid, Text, VStack, Link } from "@chakra-ui/react";
 import Section from "./Section";
 
 const reasons = [
   {
-    title: "Efficient Query Mirrors",
+    title: "Snapshots",
     description:
-      "Create efficient query mirrors of static STAC Collections, enabling fast searches without a full database backend.",
+      "Create full or partial copies of all items your STAC catalog for backup and offline access",
   },
   {
-    title: "Performant API Responses",
-    description:
-      "STAC APIs can serve responses faster by reading from pre-computed Parquet files instead of querying databases.",
-  },
-  {
-    title: "Columnar Access",
+    title: "Columnar access",
     description:
       "Access specific fields efficiently thanks to Parquet's columnar format. Only read the columns you need.",
   },
   {
-    title: "Better Compression",
+    title: "Compression without compromise",
     description:
-      "STAC items in a collection share similar structures, allowing Parquet's compression to achieve excellent ratios.",
+      "stac-geoparquet takes up less space on disc than compressed JSON, while simultaneously improving analytic queries.",
+  },
+  {
+    title: "STAC API without a database",
+    description: (
+      <Text>
+        Serve STAC APIs backed by stac-geoparquet with{" "}
+        <Link href="https://github.com/stac-utils/stac-fastapi-geoparquet/">
+          stac-fastapi-geoparquet
+        </Link>
+        .
+      </Text>
+    ),
   },
 ];
 

@@ -1,4 +1,4 @@
-import { Box, Link, SimpleGrid, Text, VStack } from "@chakra-ui/react";
+import { Box, Card, Link, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 
 import Section from "./Section";
 
@@ -26,34 +26,27 @@ const libraries: Implementation[] = [
 const tools: Implementation[] = [
   {
     name: "Microsoft Planetary Computer",
-    description: "Provides stac-geoparquet files for their data catalog.",
+    description: "Provides stac-geoparquet files for many collections.",
     url: "https://planetarycomputer.microsoft.com/",
-  },
-  {
-    name: "Google Earth Engine STAC",
-    description: "GEE catalog available as stac-geoparquet.",
-    url: "https://github.com/google/earthengine-catalog",
   },
 ];
 
 function ImplementationCard({ impl }: { impl: Implementation }) {
   return (
-    <Box p={6} bg="white" borderRadius="lg" shadow="sm">
-      <VStack align="start" gap={2}>
-        <Link
-          href={impl.url}
-          color="brand.solid"
-          fontWeight="semibold"
-          fontSize="lg"
-          _hover={{ textDecoration: "underline" }}
-        >
-          {impl.name}
-        </Link>
-        <Text color="gray.600" fontSize="sm">
-          {impl.description}
-        </Text>
-      </VStack>
-    </Box>
+    <Card.Root variant="elevated">
+      <Card.Body gap={2}>
+        <Card.Title>
+          <Link
+            href={impl.url}
+            color="brand.solid"
+            _hover={{ textDecoration: "underline" }}
+          >
+            {impl.name}
+          </Link>
+        </Card.Title>
+        <Card.Description>{impl.description}</Card.Description>
+      </Card.Body>
+    </Card.Root>
   );
 }
 

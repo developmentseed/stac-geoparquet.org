@@ -1,7 +1,8 @@
-import { Box, Code, CodeBlock, Link, Text, VStack } from "@chakra-ui/react";
+import { Box, Code, CodeBlock, Text, VStack } from "@chakra-ui/react";
 import { createShikiAdapter } from "@chakra-ui/react";
 import type { HighlighterGeneric } from "shiki";
 import Section from "./Section";
+import TextLink from "./TextLink";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const shikiAdapter = createShikiAdapter<HighlighterGeneric<any, any>>({
@@ -22,13 +23,7 @@ function GetStarted() {
         <Box>
           <Text fontSize="lg" color="gray.700" lineHeight="tall" mb={4}>
             The easiest way to get started is with the{" "}
-            <Link
-              href="https://pypi.org/project/rustac/"
-              color="brand.solid"
-              fontWeight="medium"
-            >
-              rustac
-            </Link>{" "}
+            <TextLink href="https://pypi.org/project/rustac/">rustac</TextLink>{" "}
             Python library :
           </Text>
           <Box
@@ -80,21 +75,13 @@ data_frame = geopandas.from_parquet("items.parquet")`}
         <Box>
           <Text fontSize="lg" color="gray.700" lineHeight="tall">
             For more details, see the{" "}
-            <Link
-              href="https://radiantearth.github.io/stac-geoparquet-spec/latest/"
-              color="brand.solid"
-              fontWeight="medium"
-            >
+            <TextLink href="https://radiantearth.github.io/stac-geoparquet-spec/latest/">
               specification
-            </Link>{" "}
+            </TextLink>{" "}
             and{" "}
-            <Link
-              href="https://stac-utils.github.io/rustac-py/latest/"
-              color="brand.solid"
-              fontWeight="medium"
-            >
+            <TextLink href="https://stac-utils.github.io/rustac-py/latest/">
               documentation
-            </Link>
+            </TextLink>
             .
           </Text>
         </Box>

@@ -1,5 +1,6 @@
-import { Link, Text, VStack } from "@chakra-ui/react";
+import { Text, VStack } from "@chakra-ui/react";
 import Section from "./Section";
+import TextLink from "./TextLink";
 
 function About() {
   return (
@@ -7,29 +8,10 @@ function About() {
       <VStack gap={6} align="stretch">
         <Text fontSize="lg" color="gray.700" lineHeight="tall">
           The stac-geoparquet specification describes how to encode{" "}
-          <Link
-            href="https://stacspec.org"
-            color="brand.solid"
-            fontWeight="medium"
-          >
-            STAC
-          </Link>{" "}
-          items in the{" "}
-          <Link
-            href="https://parquet.apache.org/"
-            color="brand.solid"
-            fontWeight="medium"
-          >
-            Apache Parquet
-          </Link>{" "}
+          <TextLink href="https://stacspec.org">STAC</TextLink> items in the{" "}
+          <TextLink href="https://parquet.apache.org/">Apache Parquet</TextLink>{" "}
           format, following the{" "}
-          <Link
-            href="https://geoparquet.org/"
-            color="brand.solid"
-            fontWeight="medium"
-          >
-            GeoParquet
-          </Link>{" "}
+          <TextLink href="https://geoparquet.org/">GeoParquet</TextLink>{" "}
           specification. It provides a standardized way to store large
           collections of STAC items as columnar data, enabling efficient queries
           and analysis at scale.
@@ -41,13 +23,9 @@ function About() {
         </Text>
         <Text fontSize="lg" color="gray.700" lineHeight="tall">
           Read the{" "}
-          <Link
-            href="https://radiantearth.github.io/stac-geoparquet-spec/latest/"
-            color="brand.solid"
-            fontWeight="medium"
-          >
+          <TextLink href="https://radiantearth.github.io/stac-geoparquet-spec/latest/">
             latest version of the specification.
-          </Link>
+          </TextLink>
         </Text>
       </VStack>
     </Section>

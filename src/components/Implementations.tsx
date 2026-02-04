@@ -11,25 +11,26 @@ const libraries: Implementation[] = [
   {
     name: "stac-geoparquet (Python)",
     description:
-      "Convert STAC items to/from GeoParquet. The reference implementation.",
+      "Convert STAC items to/from GeoParquet. The original reference implementation.",
     url: "https://github.com/stac-utils/stac-geoparquet",
   },
   {
-    name: "stac-rs (Rust)",
-    description: "Rust library for STAC with GeoParquet support.",
-    url: "https://github.com/stac-utils/stac-rs",
+    name: "rustac (Python, Rust, Javascript)",
+    description:
+      "Python package, Rust library, and WASM module for STAC with GeoParquet support.",
+    url: "https://github.com/stac-utils/rustac-py",
   },
 ];
 
 const tools: Implementation[] = [
   {
     name: "Microsoft Planetary Computer",
-    description: "Provides STAC GeoParquet files for their data catalog.",
+    description: "Provides stac-geoparquet files for their data catalog.",
     url: "https://planetarycomputer.microsoft.com/",
   },
   {
     name: "Google Earth Engine STAC",
-    description: "GEE catalog available as STAC GeoParquet.",
+    description: "GEE catalog available as stac-geoparquet.",
     url: "https://github.com/google/earthengine-catalog",
   },
 ];

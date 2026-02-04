@@ -1,5 +1,19 @@
-import { Box, Code, Link, Text, VStack } from "@chakra-ui/react";
+import { Box, Code, CodeBlock, Link, Text, VStack } from "@chakra-ui/react";
+import { createShikiAdapter } from "@chakra-ui/react";
+import type { HighlighterGeneric } from "shiki";
 import Section from "./Section";
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const shikiAdapter = createShikiAdapter<HighlighterGeneric<any, any>>({
+  async load() {
+    const { createHighlighter } = await import("shiki");
+    return createHighlighter({
+      langs: ["python"],
+      themes: ["github-dark", "github-light"],
+    });
+  },
+  theme: "github-dark",
+});
 
 function GetStarted() {
   return (
@@ -9,13 +23,13 @@ function GetStarted() {
           <Text fontSize="lg" color="gray.700" lineHeight="tall" mb={4}>
             The easiest way to get started is with the{" "}
             <Link
-              href="https://github.com/stac-utils/stac-geoparquet"
+              href="https://pypi.org/project/rustac/"
               color="brand.solid"
               fontWeight="medium"
             >
-              stac-geoparquet Python library
-            </Link>
-            :
+              rustac
+            </Link>{" "}
+            Python library :
           </Text>
           <Box
             bg="gray.800"
@@ -27,40 +41,44 @@ function GetStarted() {
             overflowX="auto"
           >
             <Code bg="transparent" color="inherit">
-              pip install stac-geoparquet
+              pip install rustac
             </Code>
           </Box>
         </Box>
 
         <Box>
           <Text fontSize="lg" color="gray.700" lineHeight="tall" mb={4}>
-            Convert a STAC ItemCollection to GeoParquet:
+            Convert a STAC Item Collection to and from stac-geoparquet:
           </Text>
-          <Box
-            bg="gray.800"
-            color="gray.100"
-            p={4}
-            borderRadius="md"
-            fontFamily="mono"
-            fontSize="sm"
-            overflowX="auto"
-            whiteSpace="pre"
-          >
-            {`import stac_geoparquet
+          <CodeBlock.AdapterProvider value={shikiAdapter}>
+            <CodeBlock.Root
+              code={`import rustac
 
-# From a list of STAC items
-stac_geoparquet.to_parquet(items, "items.parquet")
+# Writes a list of items, or an item collection, to stac-geoparquet
+rustac.write_sync(items, "items.parquet")
 
-# Read back as a GeoDataFrame
-gdf = stac_geoparquet.read_parquet("items.parquet")`}
-          </Box>
+# Reads stac-geoparquet into a item collection
+items = rustac.read_sync("items.parquet")
+
+# Reads stac-geoparquet into an Arrow table, and convert to a data fram
+table = rustac.read_to_arrow_sync("items.parquet")
+data_frame = GeoPandas.from_arrow(table)`}
+              language={"python"}
+            >
+              <CodeBlock.Content>
+                <CodeBlock.Code>
+                  <CodeBlock.CodeText />
+                </CodeBlock.Code>
+              </CodeBlock.Content>
+            </CodeBlock.Root>
+          </CodeBlock.AdapterProvider>
         </Box>
 
         <Box>
           <Text fontSize="lg" color="gray.700" lineHeight="tall">
             For more details, see the{" "}
             <Link
-              href="https://github.com/stac-utils/stac-geoparquet/blob/main/spec/stac-geoparquet-spec.md"
+              href="https://radiantearth.github.io/stac-geoparquet-spec/latest/"
               color="brand.solid"
               fontWeight="medium"
             >
@@ -68,7 +86,7 @@ gdf = stac_geoparquet.read_parquet("items.parquet")`}
             </Link>{" "}
             and{" "}
             <Link
-              href="https://stac-utils.github.io/stac-geoparquet/"
+              href="https://stac-utils.github.io/rustac-py/latest/"
               color="brand.solid"
               fontWeight="medium"
             >

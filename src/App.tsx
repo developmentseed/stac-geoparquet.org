@@ -18,7 +18,7 @@ function App() {
         <Implementations />
       </Box>
       <Box as="footer" py={8} textAlign="center" color="gray.500" fontSize="sm">
-        STAC GeoParquet is part of the{" "}
+        stac-geoparquet is part of the{" "}
         <Link
           href="https://stacspec.org"
           color="brand.solid"

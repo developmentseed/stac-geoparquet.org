@@ -6,7 +6,7 @@ function About() {
     <Section id="about" title="About">
       <VStack gap={6} align="stretch">
         <Text fontSize="lg" color="gray.700" lineHeight="tall">
-          STAC GeoParquet is a specification that describes how to encode{" "}
+          stac-geoparquet is a specification that describes how to encode{" "}
           <Link
             href="https://stacspec.org"
             color="brand.solid"
@@ -32,13 +32,13 @@ function About() {
           bulk data access and analytics workloads.
         </Text>
         <Text fontSize="lg" color="gray.700" lineHeight="tall">
-          Read the full specification:{" "}
+          Read the{" "}
           <Link
-            href="https://github.com/stac-utils/stac-geoparquet/blob/main/spec/stac-geoparquet-spec.md"
+            href="https://radiantearth.github.io/stac-geoparquet-spec/latest/"
             color="brand.solid"
             fontWeight="medium"
           >
-            stac-geoparquet-spec.md
+            latest version of the specification.
           </Link>
         </Text>
       </VStack>

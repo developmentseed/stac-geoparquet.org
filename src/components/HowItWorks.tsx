@@ -34,7 +34,7 @@ function HowItWorks() {
     <Section id="how-it-works" title="How It Works">
       <VStack gap={6} align="stretch">
         <Text fontSize="lg" color="gray.700" lineHeight="tall">
-          STAC GeoParquet maps the STAC Item structure to Parquet's columnar
+          stac-geoparquet maps the STAC Item structure to Parquet's columnar
           format in a straightforward way:
         </Text>
         <List.Root gap={4} variant="plain">

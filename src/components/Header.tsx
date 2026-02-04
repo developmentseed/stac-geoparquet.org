@@ -1,4 +1,14 @@
-import { Box, Container, Flex, Heading, Link, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Center,
+  Container,
+  Flex,
+  Heading,
+  Image,
+  Link,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -21,7 +31,7 @@ function Header() {
         >
           <Link href="#" _hover={{ textDecoration: "none" }}>
             <Heading as="h1" size="lg" fontWeight="bold">
-              STAC GeoParquet
+              stac-geoparquet
             </Heading>
           </Link>
           <Flex gap={{ base: 3, md: 6 }} wrap="wrap" justify="center">
@@ -31,7 +41,6 @@ function Header() {
                 href={link.href}
                 fontSize="sm"
                 fontWeight="medium"
-                _hover={{ textDecoration: "underline" }}
               >
                 {link.label}
               </Link>
@@ -42,12 +51,24 @@ function Header() {
 
       <Box py={{ base: 16, md: 24 }} textAlign="center">
         <Container maxW="container.md">
-          <Heading as="h2" size="4xl" mb={6} fontWeight="bold">
-            STAC GeoParquet
-          </Heading>
-          <Text fontSize={{ base: "xl", md: "2xl" }} opacity={0.9}>
-            An encoding for STAC items in Apache Parquet
-          </Text>
+          <Stack gap={6}>
+            <Center>
+              <Image src="/stac-geoparquet.png" w={100} />
+            </Center>
+            <Heading as="h2" size="4xl" fontWeight="bold">
+              stac-geoparquet
+            </Heading>
+            <Text fontSize={{ base: "xl", md: "2xl" }} opacity={0.9}>
+              Store{" "}
+              <Link href="https://stacspec.org/" target="_blank" color={"bg"}>
+                STAC
+              </Link>{" "}
+              items in{" "}
+              <Link href="https://geoparquet.org/" target="_blank" color={"bg"}>
+                GeoParquet
+              </Link>
+            </Text>
+          </Stack>
         </Container>
       </Box>
     </Box>

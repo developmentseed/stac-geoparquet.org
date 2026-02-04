@@ -18,7 +18,7 @@ const libraries: Implementation[] = [
     name: "rustac (Python, Rust, Javascript)",
     description:
       "Python package, Rust library, and WASM module for STAC with GeoParquet support.",
-    url: "https://github.com/stac-utils/rustac-py",
+    url: "https://github.com/stac-utils/rustac",
   },
 ];
 

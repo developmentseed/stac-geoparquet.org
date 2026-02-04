@@ -26,8 +26,8 @@ function About() {
 
         <Text>
           <strong>stac-geoparquet</strong> complements existing STAC APIs and
-          static catalogs, and is be extremely performant for bulk data access
-          and analytics workloads.
+          static catalogs, and is extremely performant for bulk data access and
+          analytics workloads.
         </Text>
 
         <Text>

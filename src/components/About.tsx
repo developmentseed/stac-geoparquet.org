@@ -6,7 +6,7 @@ function About() {
     <Section id="about" title="About">
       <VStack gap={6} align="stretch">
         <Text fontSize="lg" color="gray.700" lineHeight="tall">
-          stac-geoparquet is a specification that describes how to encode{" "}
+          The stac-geoparquet specification describes how to encode{" "}
           <Link
             href="https://stacspec.org"
             color="brand.solid"
@@ -22,9 +22,17 @@ function About() {
           >
             Apache Parquet
           </Link>{" "}
-          format. It provides a standardized way to store large collections of
-          STAC items as columnar data, enabling efficient queries and analysis
-          at scale.
+          format, following the{" "}
+          <Link
+            href="https://geoparquet.org/"
+            color="brand.solid"
+            fontWeight="medium"
+          >
+            GeoParquet
+          </Link>{" "}
+          specification. It provides a standardized way to store large
+          collections of STAC items as columnar data, enabling efficient queries
+          and analysis at scale.
         </Text>
         <Text fontSize="lg" color="gray.700" lineHeight="tall">
           The specification is designed to complement existing STAC APIs and

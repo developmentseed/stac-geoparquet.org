@@ -11,7 +11,7 @@ interface SectionProps {
 function Section({ id, title, children, bg = "white" }: SectionProps) {
   return (
     <Box as="section" id={id} py={{ base: 12, md: 20 }} bg={bg}>
-      <Container maxW="container.lg">
+      <Container>
         <Heading
           as="h2"
           size="2xl"

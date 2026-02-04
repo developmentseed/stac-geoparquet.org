@@ -1,4 +1,4 @@
-import { Box, Code, CodeBlock, Stack, Text, VStack } from "@chakra-ui/react";
+import { CodeBlock, Stack, Text } from "@chakra-ui/react";
 import { createShikiAdapter } from "@chakra-ui/react";
 
 import type { HighlighterGeneric } from "shiki";

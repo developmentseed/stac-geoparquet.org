@@ -1,4 +1,4 @@
-import { Box, List, Text, VStack } from "@chakra-ui/react";
+import { Box, List, Stack, Text } from "@chakra-ui/react";
 
 import Section from "./Section";
 
@@ -33,7 +33,7 @@ const features = [
 function HowItWorks() {
   return (
     <Section id="how-it-works" title="How It Works">
-      <VStack gap={6} align="stretch">
+      <Stack gap={6}>
         <Text fontSize="lg" color="gray.700" lineHeight="tall">
           stac-geoparquet maps the STAC Item structure to Parquet's columnar
           format in a straightforward way:
@@ -52,7 +52,7 @@ function HowItWorks() {
             </List.Item>
           ))}
         </List.Root>
-      </VStack>
+      </Stack>
     </Section>
   );
 }

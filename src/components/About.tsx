@@ -1,4 +1,5 @@
 import { Stack, Text } from "@chakra-ui/react";
+
 import Section from "./Section";
 import TextLink from "./TextLink";
 

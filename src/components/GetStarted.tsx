@@ -1,6 +1,8 @@
 import { Box, Code, CodeBlock, Text, VStack } from "@chakra-ui/react";
 import { createShikiAdapter } from "@chakra-ui/react";
+
 import type { HighlighterGeneric } from "shiki";
+
 import Section from "./Section";
 import TextLink from "./TextLink";
 

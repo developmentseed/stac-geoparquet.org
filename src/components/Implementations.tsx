@@ -1,4 +1,5 @@
 import { Box, Link, SimpleGrid, Text, VStack } from "@chakra-ui/react";
+
 import Section from "./Section";
 
 interface Implementation {

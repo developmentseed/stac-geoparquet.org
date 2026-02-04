@@ -1,4 +1,8 @@
-import { Box, SimpleGrid, Text, VStack, Link } from "@chakra-ui/react";
+import { ReactNode } from "react";
+
+import { Link, SimpleGrid } from "@chakra-ui/react";
+import { Card, Text } from "@chakra-ui/react";
+
 import Section from "./Section";
 
 const reasons = [
@@ -31,27 +35,35 @@ const reasons = [
   },
 ];
 
+interface ReasonCardProps {
+  title: string;
+  description: ReactNode;
+}
+
+function ReasonCard({ title, description }: ReasonCardProps) {
+  return (
+    <Card.Root variant={"elevated"}>
+      <Card.Body gap={3}>
+        <Card.Title fontSize="xl" color="gray.800">
+          {title}
+        </Card.Title>
+        <Text color="gray.600" lineHeight="tall">
+          {description}
+        </Text>
+      </Card.Body>
+    </Card.Root>
+  );
+}
 function Why() {
   return (
     <Section id="why" title="Why?" bg="gray.50">
       <SimpleGrid columns={{ base: 1, md: 2 }} gap={8}>
         {reasons.map((reason) => (
-          <Box
+          <ReasonCard
             key={reason.title}
-            p={6}
-            bg="white"
-            borderRadius="lg"
-            shadow="sm"
-          >
-            <VStack align="start" gap={3}>
-              <Text fontSize="xl" fontWeight="semibold" color="gray.800">
-                {reason.title}
-              </Text>
-              <Text color="gray.600" lineHeight="tall">
-                {reason.description}
-              </Text>
-            </VStack>
-          </Box>
+            title={reason.title}
+            description={reason.description}
+          />
         ))}
       </SimpleGrid>
     </Section>

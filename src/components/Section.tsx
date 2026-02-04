@@ -1,5 +1,6 @@
-import { Box, Container, Heading } from "@chakra-ui/react";
 import { ReactNode } from "react";
+
+import { Box, Container, Heading } from "@chakra-ui/react";
 
 interface SectionProps {
   id: string;

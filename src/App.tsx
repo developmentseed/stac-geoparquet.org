@@ -1,10 +1,11 @@
 import { Box, Link } from "@chakra-ui/react";
-import Header from "./components/Header";
+
 import About from "./components/About";
-import Why from "./components/Why";
-import HowItWorks from "./components/HowItWorks";
 import GetStarted from "./components/GetStarted";
+import Header from "./components/Header";
+import HowItWorks from "./components/HowItWorks";
 import Implementations from "./components/Implementations";
+import Why from "./components/Why";
 
 function App() {
   return (

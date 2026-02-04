@@ -1,4 +1,5 @@
 import { Box, List, Text, VStack } from "@chakra-ui/react";
+
 import Section from "./Section";
 
 const features = [

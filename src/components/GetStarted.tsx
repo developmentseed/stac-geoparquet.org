@@ -60,9 +60,12 @@ rustac.write_sync(items, "items.parquet")
 # Reads stac-geoparquet into a item collection
 items = rustac.read_sync("items.parquet")
 
-# Reads stac-geoparquet into an Arrow table, and convert to a data fram
-table = rustac.read_to_arrow_sync("items.parquet")
-data_frame = GeoPandas.from_arrow(table)`}
+# With GeoPandas and pyarrow, we can read into a data frame, e.g.:
+#
+#   pip install pyarrow geopandas
+#
+import geopandas
+data_frame = geopandas.from_parquet("items.parquet")`}
               language={"python"}
             >
               <CodeBlock.Content>

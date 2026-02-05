@@ -21,6 +21,12 @@ const libraries: Implementation[] = [
       "Python package, Rust library, and WASM module for STAC with GeoParquet support.",
     url: "https://github.com/stac-utils/rustac",
   },
+  {
+    name: "stac-map (Javascript)",
+    description:
+      "Open, public single-page website that can load, visualize, and export stac-geoparquet",
+    url: "https://developmentseed.org/stac-map",
+  },
 ];
 
 const tools: Implementation[] = [

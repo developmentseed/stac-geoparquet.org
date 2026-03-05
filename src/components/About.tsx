@@ -38,6 +38,10 @@ function About() {
           Read the{" "}
           <TextLink href="https://radiantearth.github.io/stac-geoparquet-spec/latest/">
             latest version of the specification.
+          </TextLink>{" "}
+          and{" "}
+          <TextLink href="https://github.com/opengeospatial/geoparquet/blob/main/format-specs%2Fdistributing-geoparquet.md">
+            best practices for GeoParquet
           </TextLink>
         </Text>
       </Stack>
